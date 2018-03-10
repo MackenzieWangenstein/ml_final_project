@@ -19,7 +19,9 @@ class Preprocessor(object):
         }
         self.dataset_df = pd.read_csv(filename)
         self.processed_df = self._preprocess(self.dataset_df)
-        self.standardize = standardize
+        # self.standardize = standardize
+        #print(self.dataset_df.shape)
+        #print(self.processed_df.shape)
 
     def get_matrix(self, cols):
         '''
@@ -86,6 +88,7 @@ class Preprocessor(object):
         else:
             return 3
 
+#TODO: play around with change values for classes  -- investigate bias here
     def name(name):
         '''passenger.name -> (int)'''
         if 'Sir.' in name:
